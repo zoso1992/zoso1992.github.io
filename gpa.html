@@ -53,7 +53,7 @@ app.controller('allCtrl', function($scope, $http) {
     
    $http.get("students.json")         
      .then(function (response) {
-	    $scope.gpa = response.data;  
+	    $scope.students = response.data;  
      });
 
 });
