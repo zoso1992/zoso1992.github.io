@@ -61,14 +61,17 @@
 </div>   <!-- end class= 'container' -->
 
 <script>
-var app = angular.module('homeApp', []);
-
-app.controller('homeCtrl', function($scope, $http) {
-  
-     var today = new Date();  /* get today's date */
-     $scope.date= today.toDateString()
-	   
-});
+var app = angular.module('gpaApp', []);
+	  
 		  
+app.controller('allCtrl', function($scope, $http) {
+    
+   $http.get("students.json")          
+     .then(function (response) {
+	    $scope.students = response.data;  
+     });
+
+});
+
 </script>
 </body></html>
